@@ -1,6 +1,6 @@
-# PEGUARD
+# FILEGUARD
 
-PEGUARD is a file crypter and packing utility. 
+FILEGUARD is a file crypter and packing utility. 
 
 This project was originally included as a script in the WARFOX-C2 project found [here](). However, it can work as a standalone packer. The associated dropper utility mentioned here is known as CUBDROP and it can be found [here]()
 
@@ -10,20 +10,20 @@ This project was originally included as a script in the WARFOX-C2 project found 
 
 ## Technical Details
 
-### PeGuard
+### FileGuard
 
-PeGuard takes a file as input, compresses it via GZIP, encrypts it using AES-128 (CBC mode) and appends the AES key to the end of the file. This utility was designed to pack the WARFOX DLL implant to aid in its DLL sideloading execution process.
+FILEGUARD takes a file as input, compresses it via GZIP, encrypts it using AES-128 (CBC mode) and appends the AES key to the end of the file. This utility was designed to pack the WARFOX DLL implant to aid in its DLL sideloading execution process.
 
 1. You provide an input file (technically any file type should work) as argv[1] and the expected output file as argv[2]
-2. PeGuard compresses the input file using GZIP and writes a copy to disk
-3. PeGuard encrypts the compressed file using AES-128 in CBC mode with a randomly generated key
+2. FileGuard compresses the input file using GZIP and writes a copy to disk
+3. FileGuard encrypts the compressed file using AES-128 in CBC mode with a randomly generated key
     * The AES IV is hardcoded as `ffffffffffffffff` to make the key parsing process of the dropper utility easier, but it could be randomized
 4. The AES key is appended to the file so it can be discovered by the dropper utility
 5. A copy of the finalized binary is stored in an output text file; the binary is formatted as a BYTE array which can be embedded in the dropper process
 
 ### Dropper Utility
 
-This utility is not yet included in this repository. The dropper utility is written in C++ and relies on C++ Boost libraries to perform GZIP decompression and decryption. The following example outlines how the dropper can be used to DLL-sideload the PeGuard packed binary, however, PeGuard could be applied elsewhere.
+This utility is not yet included in this repository. The dropper utility is written in C++ and relies on C++ Boost libraries to perform GZIP decompression and decryption. The following example outlines how the dropper can be used to DLL-sideload the FileGuard packed binary, however, FileGuard could be applied elsewhere.
 
 1. The dropper locates the embedded (packed) payload
 2. The AES key is recovered from the end of the encrypted file and the buffer is resized to remove the key
@@ -35,9 +35,9 @@ This utility is not yet included in this repository. The dropper utility is writ
 ## Example Usage
 
 ```
-$ python3 PeGuard.py calc.exe calc_packed.exe
+$ python3 FileGuard.py calc.exe calc_packed.exe
 
-[+] Usage: python PeGuard.py <filein> <fileout>
+[+] Usage: python FileGuard.py <filein> <fileout>
 ____________________________________________________________
 
 [+] Successfully GZIP compressed file
