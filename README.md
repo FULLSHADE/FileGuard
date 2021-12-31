@@ -34,9 +34,9 @@ This utility is not yet included in this repository. The dropper utility is writ
 ## Example Usage
 
 ```
-python3 PeGuard.py calc.exe calc_packed.exe
+$ python3 PeGuard.py calc.exe calc_packed.exe
 
-[+] Usage: python file_compressor.py <filein> <fileout>
+[+] Usage: python PeGuard.py <filein> <fileout>
 ____________________________________________________________
 
 [+] Successfully GZIP compressed file
