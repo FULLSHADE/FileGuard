@@ -79,7 +79,7 @@ def main():
     input_file = sys.argv[1]
     output_file = sys.argv[2]
     
-    print("[+] Usage: python file_compressor.py <filein> <fileout>\n" + "_"* 60 + "\n")
+    print("[+] Usage: python PeGuard.py <filein> <fileout>\n" + "_"* 60 + "\n")
 
     try:
         gzip_compress_files(input_file, output_file)
