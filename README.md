@@ -2,7 +2,7 @@
 
 PEGUARD is a file crypter and packing utility. 
 
-This project was originally included as a script in the WARFOX-C2 project found [here](). However, it can work as a standalone packer. The associated dropper utility is known as CUBDROP and it can be found [here]()
+This project was originally included as a script in the WARFOX-C2 project found [here](). However, it can work as a standalone packer. The associated dropper utility mentioned here is known as CUBDROP and it can be found [here]()
 
 ## Description
 
