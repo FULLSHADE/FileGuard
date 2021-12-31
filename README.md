@@ -23,13 +23,13 @@ PeGuard takes a file as input, compresses it via GZIP, encrypts it using AES-128
 
 ### Dropper Utility
 
-This utility is not yet included in this repository. The dropper utility is written in C++ and relies on C++ Boost libraries to perform GZIP decompression and decryption. The following example outlines how the dropper can be used to DLL-sideload the PeGuard packed binary, however PeGuard could be applied elsewhere.
+This utility is not yet included in this repository. The dropper utility is written in C++ and relies on C++ Boost libraries to perform GZIP decompression and decryption. The following example outlines how the dropper can be used to DLL-sideload the PeGuard packed binary, however, PeGuard could be applied elsewhere.
 
 1. The dropper locates the embedded (packed) payload
 2. The AES key is recovered from the end of the encrypted file and the buffer is resized to remove the key
 3. The key is used to decrypt the packed file via AES
 4. Once decrypted, the compressed file is decompressed using Boost::Gzip
-5. The final payload is written to disk along-side it's sibling binary
+5. The final payload is written to disk alongside its sibling binary
 6. The sibling binary (a signed, legitimate binary) is used to DLL-sideload the associated DLL payload
 
 ## Example Usage
