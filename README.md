@@ -30,3 +30,22 @@ This utility is not yet included in this repository. The dropper utility is writ
 4. Once decrypted, the compressed file is decompressed using Boost::Gzip
 5. The final payload is written to disk along-side it's sibling binary
 6. The sibling binary (a signed, legitimate binary) is used to DLL-sideload the associated DLL payload
+
+## Example Usage
+
+```
+python3 PeGuard.py calc.exe calc_packed.exe
+
+[+] Usage: python file_compressor.py <filein> <fileout>
+____________________________________________________________
+
+[+] Successfully GZIP compressed file
+[+] Original file - 5da8c98136d98deec4716edd79c7145f
+[+] Compressed file - 7d8bbaf40e671ef70ca4811007fb7f6e
+[+] File to encrypt - calc_packed.exe
+        [+] AES Key: 34f88c98cfd49e102c00064577328f3b
+        [+] AES IV: ffffffffffffffff
+[+] Encrypted file - d2cac6a07e13c4a39620239d0e3a93c8
+[+] Encrypted file output - calc_packed.exe.enc
+[+] Appended AES key to the file
+```
