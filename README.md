@@ -10,9 +10,10 @@ This project was originally included as a script in the WARFOX-C2 project found 
 
 ## Technical Details
 
+### PeGuard
+
 PeGuard takes a file as input, compresses it via GZIP, encrypts it using AES-128 (CBC mode) and appends the AES key to the end of the file. This utility was designed to pack the WARFOX DLL implant to aid in its DLL sideloading execution process.
 
-### PeGuard
 1. You provide an input file (technically any file type should work) as argv[1] and the expected output file as argv[2]
 2. PeGuard compresses the input file using GZIP and writes a copy to disk
 3. PeGuard encrypts the compressed file using AES-128 in CBC mode with a randomly generated key
