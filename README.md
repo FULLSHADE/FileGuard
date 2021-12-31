@@ -6,7 +6,7 @@ This project was originally included as a script in the WARFOX-C2 project found 
 
 ## Description
 
-![image](https://user-images.githubusercontent.com/54753063/147796026-e1e1679d-9042-4a27-876c-4654674074a5.png)
+![image](https://user-images.githubusercontent.com/54753063/147796550-59fc8b1b-f9b2-4a3c-87a7-19bf64b116cd.png)
 
 ## Technical Details
 
