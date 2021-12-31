@@ -49,3 +49,8 @@ ____________________________________________________________
 [+] Encrypted file output - calc_packed.exe.enc
 [+] Appended AES key to the file
 ```
+
+## To-do
+
+- [ ] Strip the GZIP header and set it during the unpacking routine of the dropper utility
+- [ ] Fix the XOR routine that encrypts the appended AES key
